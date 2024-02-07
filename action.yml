@@ -1,0 +1,15 @@
+name: 'Calculate Diff'
+description: 'Calculates the diff between two JSON objects'
+inputs:
+  solace_cloud_token:
+    description: 'Solace Cloud API Token'
+    required: true
+  application_version_id:
+    description: 'Application Version ID'
+    required: true
+  event_broker_id:
+    description: 'Event Broker ID'
+    required: true
+runs:
+  using: 'node20'
+  main: 'calculate-diff.js'
