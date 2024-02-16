@@ -42,9 +42,9 @@ const req = https.request(options, res => {
     for (let i = 0; i < requested.length; i++) {
       const requestedItem = JSON.parse(requested[i].value);
       const existingItem = existing[i] === undefined ? {} : JSON.parse(existing[i].value);
-      
+
       diffResult += `${requested[i].type}: ${requested[i].identifier}\n`;
-      diffResult += `${diff.diffString(requestedItem, existingItem)}\n`;
+      diffResult += `${diff.diffString(existingItem, requestedItem)}\n`;
     }
 
     core.debug(diffResult);
